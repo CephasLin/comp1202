@@ -16,7 +16,7 @@ namespace LengthConverter
             inch = length % 36 % 12;
 
             Console.WriteLine(length + " inches equel to " + yard + " yard " + feet + " feet " + inch + " inch ");
-
+            Console.ReadKey();
 
         }
     }
