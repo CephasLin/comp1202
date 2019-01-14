@@ -1,0 +1,30 @@
+using System;
+
+namespace AverageMark
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            string name;
+            double markA, markB, markC, markD, totalMark, average;
+            Console.WriteLine("Please enter the name:");
+            name = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("Please enter the mark of Subject A:");
+            markA = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the mark of Subject B:");
+            markB = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the mark of Subject C:");
+            markC = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the mark of Subject D:");
+            markD = Convert.ToDouble(Console.ReadLine());
+
+            //processing 
+            totalMark = markA + markB + markC + markD;
+            average = totalMark / 4;
+            //output
+            Console.WriteLine("Name: "+ name +".\nThe total mark: " + totalMark + "\nThe average of the mark: " + average);
+
+        }
+    }
+}
