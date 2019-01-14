@@ -1,0 +1,33 @@
+using System;
+
+namespace NewHydroCharge
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            string name;
+            double oldMeter, newMeter, totalUnit, hydroCharge, fixCharge, ratePerUnit;
+            Console.WriteLine("Please enter your name:");
+            name = Console.ReadLine();
+            Console.WriteLine("Please enter your precious meter:");
+            oldMeter = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter your new meter:");
+            newMeter = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter your fixed charge:");
+            fixCharge = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the rate per unit:");
+            ratePerUnit = Convert.ToDouble(Console.ReadLine());
+
+            //processing
+            totalUnit = newMeter - oldMeter;
+            hydroCharge = totalUnit * ratePerUnit + fixCharge;
+
+            //output
+            Console.WriteLine("Name:{0}" + "\nTotal Unit: {1}" + "\nTotal Charge: {2:C}", name,totalUnit,hydroCharge );
+            Console.ReadKey();
+
+
+        }
+    }
+}
