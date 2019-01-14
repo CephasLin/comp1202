@@ -1,0 +1,23 @@
+using System;
+
+namespace LengthConverter
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int length, inch, feet, yard;
+            Console.WriteLine("Please enter the length in inch:");
+            length = Convert.ToInt32(Console.ReadLine());
+            //1 yard = 3 feet
+            //1 foot = 12 inches
+            yard = length / 36;
+            feet = length % 36 / 12;
+            inch = length % 36 % 12;
+
+            Console.WriteLine(length + " inches equel to " + yard + " yard " + feet + " feet " + inch + " inch ");
+
+
+        }
+    }
+}
