@@ -24,7 +24,7 @@ namespace AverageMark
             average = totalMark / 4;
             //output
             Console.WriteLine("Name: "+ name +".\nThe total mark: " + totalMark + "\nThe average of the mark: " + average);
-
+            Console.ReadKey();
         }
     }
 }
