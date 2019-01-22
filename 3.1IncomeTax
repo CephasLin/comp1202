@@ -1,0 +1,47 @@
+using System;
+/*A country charges income tax as follows based on one’s gross salary.
+ * No tax is charged on the first 20% of salary. The remaining 80% is called taxable income. Tax is paid as follows:
+•   10% on the first $15,000 of taxable income;
+•   20% on the next $20,000 of taxable income;
+•   25% on all taxable income in excess of $35,000;
+        Write a program to read a value for a person’s salary and print the amount of tax to be paid.
+        Also print the average tax rate, that is, the percentage of salary that is paid in tax. 
+        For example, on a salary of $20,000, a person pays $1700 in tax. The average tax rate is 1700/20000*100 = 8.5%.
+
+*/
+namespace IncomeTax
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            double salary, tax,taxableIncome, averageTaxRate;
+
+            Console.WriteLine("Enter your gross income: ");
+            salary = Convert.ToDouble(Console.ReadLine());
+
+            taxableIncome = salary * 0.8;
+
+            if(taxableIncome > 0 && taxableIncome <= 15000)
+            {
+                tax = taxableIncome * 0.1;
+            }
+
+            if(taxableIncome > 15000 && taxableIncome <=35000)
+            {
+                tax = 1500 + (taxableIncome -15000) * 0.2;
+            }
+             
+            else
+            {
+                tax = 1500 + 4000 + (taxableIncome - 35000) * 0.25;
+            }
+        
+            averageTaxRate = tax / salary;
+
+            Console.WriteLine("Income tax is: {0}\nAverage tax rate is: {1:P2} ", tax ,averageTaxRate);
+            Console.ReadKey();
+        }
+        
+    }
+}
