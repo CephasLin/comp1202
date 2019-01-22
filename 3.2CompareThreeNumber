@@ -1,0 +1,36 @@
+using System;
+namespace CompareThreeNumbers
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            //Input
+            double number1, number2, number3;
+            Console.WriteLine("Enter your first number: ");
+            number1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter your first number: ");
+            number2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter your first number: ");
+            number3 = Convert.ToDouble(Console.ReadLine());
+
+            //Process
+            if(number1 > number2 && number1 > number3)
+            {
+                Console.WriteLine(number1 + " is the largrest one. ");
+            }else if(number2 > number1 && number2 > number3)
+            {
+                Console.WriteLine(number2 + " is the largest one. ");
+            }
+            else if(number3 > number1 && number3 > number2)
+            {
+                Console.WriteLine(number3 + " is the largest one. ");
+            }
+            else
+            {
+                Console.WriteLine("The result is unknown.");
+            }
+            Console.ReadKey();
+        }
+    }
+}
