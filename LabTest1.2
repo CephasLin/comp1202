@@ -1,0 +1,32 @@
+using System;
+/*
+    A company preloads a presto card with $150.00 for its employees at the beginning of each month.
+    The employees use this card to travel to and from work. It costs $2.05 for a one way trip to work.
+    At the end of the month, the company uses the number of days an employee shows up 
+    to work to calculate the remaining balance that should be on the card. 
+    Write a program that requests the number of days an employee worked for a month and 
+    calculates the remaining funds that should be on the card at the end of the month.
+[insert the code for your solution here]
+
+*/
+namespace Presto
+{
+    class MainClass
+    {
+        //Min Lin 101198598
+        public static void Main(string[] args)
+        {
+            //Input
+            double cardBalance; 
+            int days;
+            Console.WriteLine("Enter how many days an employee shows up: ");
+            days = Convert.ToInt32(Console.ReadLine());
+            //Process
+            cardBalance = 150 - days * 2.05 * 2;
+            //Output
+            Console.WriteLine("The remaining fund is {0} ", cardBalance);
+
+            Console.ReadKey();
+        }
+    }
+}
