@@ -1,0 +1,37 @@
+using System;
+/*
+    2.  Write a program which requests two weights in kilograms and grams 
+    and prints the sum of the weights.
+    For example, if the weights are 3kg 500g and 4kg 700g, 
+    your program should print 8kg 200g.
+*/
+namespace WeightConverter
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int k1, k2, g1, g2;
+            Console.Write("Enter k1: ");
+            k1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter k2: ");
+            k2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter g1: ");
+            g1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter g2: ");
+            g2 = Convert.ToInt32(Console.ReadLine());
+
+            k1 += k2;
+            g1 += g2;
+
+            if (g1 >= 1000)
+            {
+                k1 += g1 / 1000;
+                g1 -= (g1/ 1000) * 1000;
+            }
+
+
+            Console.Write("The sum is: {0},{1}.", k1, g1);
+        }
+    }
+}
