@@ -1,0 +1,50 @@
+using System;
+
+/*
+ * An auto repair shop charges as follows. Inspecting the vehicle costs $75. 
+ * If no work needs to be done, there is no further charge. 
+ * Otherwise, the charge is $75 per hour for labour plus the cost of parts,
+ * with a minimum charge of $120. If any work is done, there is no charge for inspecting the vehicle.
+   Write a program to read values for hours worked 
+   and cost of parts (either of which could be 0) and print the charge for the job.
+
+*/
+namespace AutoRepair
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            //input
+            const int inspectingCost = 75;
+            int hours, totalCharge, partsCharge;
+            int minimumCharge = 120, hourCharge = 75;
+
+            Console.WriteLine("Inspect and please input how many work need to be done" +
+            	"(0 is repair is not required):  ");
+            hours = Convert.ToInt32(Console.ReadLine());
+            if(hours > 0)
+            {
+                Console.WriteLine("Please enter the parts Charge: ");
+                partsCharge = Convert.ToInt32(Console.ReadLine());
+
+                totalCharge = hourCharge * hours + partsCharge;
+                if(totalCharge > minimumCharge)
+                {
+                    Console.WriteLine("Total charge is: " + totalCharge);
+                }
+                else
+                {
+                    totalCharge = minimumCharge;
+                    Console.WriteLine("Total charge is: " + totalCharge);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Total Charge is: " + inspectingCost);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
