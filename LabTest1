@@ -1,0 +1,41 @@
+using System;
+/*
+    Write a program which requests a person’s gross salary, deductions allowed 
+    and rate of tax (e.g. 25, meaning 25%) and calculates his net pay as follows:
+       
+1.  Taxable income is equal to the gross salary minus the deductions.
+2.  The tax is calculated by multiplying the taxable income by the rate of tax divided by 100.
+3.  The net pay is calculated by gross salary minus tax.
+Your program must print the gross salary, tax deducted and net pay, appropriately labelled.
+
+*/
+namespace Salary
+{
+    class MainClass
+    {
+        //Min Lin 101198598
+        public static void Main(string[] args)
+        {
+            //Input
+            double grossSalary, deduction, taxableIncome, tax, netPay, rateOfTax;
+            Console.WriteLine("Enter the gross salary: ");
+            grossSalary = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter deduction: ");
+            deduction = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("The rate of tax: ");
+            rateOfTax = Convert.ToDouble(Console.ReadLine());
+
+            //Process
+            taxableIncome = grossSalary - deduction;
+            tax = taxableIncome * (rateOfTax / 100);
+            netPay = grossSalary - tax;
+
+            //Output
+            Console.WriteLine("The gross salary: {0}, tax deducted: {1}," +
+                "net pay: {2} ", grossSalary, tax, netPay);
+
+            Console.ReadKey();
+        }
+
+    }
+}
