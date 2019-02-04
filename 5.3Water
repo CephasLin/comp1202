@@ -1,0 +1,58 @@
+using System;
+/*
+ *  A fixed percentage of water is taken from a well each day.
+    Request values for W and P
+    where:
+    ▪ W is the amount (in litres) of water in the well at the start of the first day
+    ▪ P is the percentage of the water in the well taken out each day
+    (a) Write a program to print the number of the day,
+    the amount taken for that day and the amount remaining at the end of the day.
+    The output should be terminated when 30 days have been printed or the amount of water 
+    remaining is less than 100 litres, whichever comes
+    first. 
+    For example, if W = 1000 and P = 10, the output should start as follows:
+    Day Amount Taken    Amount Remaining
+    1   100 900
+    2   90  810
+    3   81  729
+
+    (b) Modify the program so that the table is printed for exactly 30 days, 
+    that is, do not stop if the amount of water falls below 100 litres
+
+*/
+
+namespace Water
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            double w, p, taken;
+            int count = 0;
+            Console.WriteLine("Enter the amount of water:");
+            w = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the percentage:");
+            p = Convert.ToDouble(Console.ReadLine());
+
+            //while (w > 0 && count <30 && w>100)
+            while (w > 0 && count < 30)
+            {
+                count++;
+                taken = w * (p / 100);
+                w = w * ((100 - p) / 100);
+                Console.WriteLine("Day{0}, Taken {1:N}, Remain {2:N} ", count,taken, w);
+
+            }
+            if (count >= 30)
+            {
+                Console.WriteLine("30 days comes first.");
+            }
+            else
+            {
+                Console.WriteLine("100L comes first.");
+            }
+
+
+        }
+    }
+}
