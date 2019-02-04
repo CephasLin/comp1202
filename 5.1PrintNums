@@ -1,0 +1,47 @@
+using System;
+/*
+ * Write a program to request an integer n from 1 to 9
+ * and print a line of output consisting of ascending digits from 1 to n. 
+ * For example, if n = 5, print the line
+    12345
+
+*/
+
+namespace PrintNums
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+
+            int n,i;
+            Console.WriteLine("Enter an integer:");
+            n = Convert.ToInt32(Console.ReadLine());
+            for(i=1; i<=n; i++)
+            {
+                Console.Write("{0}", i);
+            }
+            /*
+             * Write a program to request an integer n 
+             * and print a table of the n times(multiplication) table up to 12. 
+             * For example, if the user enters 3 output should look like..
+                3 x 1 = 3
+                3 x 2 = 6
+                3 x 3 = 9
+                3 x 4 =12
+                …
+                3 x 12 =36
+
+            */
+
+            int m;
+            Console.WriteLine("Enter an integer:");
+1            m = Convert.ToInt32(Console.ReadLine());
+            for(i=1; i <=12; i++)
+            {
+                Console.WriteLine("{0} x {1} = {2}", m, i, m * i);
+            }
+
+        }
+    }
+}
