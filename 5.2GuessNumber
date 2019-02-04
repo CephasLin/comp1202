@@ -1,0 +1,37 @@
+using System;
+/*Write a program that picks an integer num between 1 and 10 
+ * and asks the user to guess the value of num. 
+ * The program should tell the user whether they should guess higher or guess
+ * lower or whether they have gone out of the range.
+ * Note: the programmer must set the value of num.
+ * 
+ */
+namespace GuessNumber
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int number = 99, guess;
+            Console.WriteLine("Guess an integer:");
+            guess = Convert.ToInt32(Console.ReadLine());
+            while(number != guess) {
+                if(guess > number) {
+                    Console.WriteLine("Guess lower:");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                }
+                else
+                {
+                    Console.WriteLine("Guess higher:");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                }
+
+            }
+            if(guess == number)
+            {
+                Console.WriteLine("correct.");
+            }
+            Console.ReadKey();
+        }
+    }
+}
