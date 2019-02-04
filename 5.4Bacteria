@@ -1,0 +1,27 @@
+using System;
+/*
+ * In a biology experiment, Mary finds that a sample of bacteria doubles 
+ * in population every 12 hours. If she starts with 1000 bacteria,
+ * in how many hours will she have 1 million?
+Write a C# program that solves the problem above using a while loop 
+
+*/
+namespace Bacteria
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            double hour=0;
+            int population=1000;
+            while (population < 1000000)
+            {
+                population *= 2;
+                hour += 12;
+                Console.WriteLine("{0}, {1}", population, hour);
+            }
+            
+
+        }
+    }
+}
