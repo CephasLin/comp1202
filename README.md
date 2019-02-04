@@ -1,2 +1,3 @@
-# COMP 1202 OBJECT ORIENTED PROGRAMMING by Andrew Rudder
-Geprge Brown College
+# COMP 1202 OBJECT ORIENTED PROGRAMMING
+by Andrew Rudder
+George Brown College
