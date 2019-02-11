@@ -1,0 +1,92 @@
+using System;
+/**
+ * Write a program to read two pairs of integers. Each pair represents a fraction. 
+ * For example, the pair 3 5 represents the fraction 3/5.
+ * Your program should print the sum of the given fractions. 
+ * For example, give the pairs 3 5 and 2 3, your program should print 19/15, since
+      +   =  
+    Modify the program so that it prints the sum with the fraction 
+    reduced to a proper fraction; for this example, your program should print 1 4/15.
+
+*/
+namespace Fraction
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            /* Console.WriteLine("Hello World!");
+             int num1, deno1, num2, deno2, num3, deno3;
+             Console.WriteLine("Enter the first num:");
+             num1 = Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine("Enter the first deno:");
+             deno1 = Convert.ToInt32(Console.ReadLine());
+
+             Console.WriteLine("Enter the second num:");
+             num2 = Convert.ToInt32(Console.ReadLine());
+             Console.WriteLine("Enter the second deno:");
+             deno2 = Convert.ToInt32(Console.ReadLine());
+             */
+
+            int num1, deno1, num2, deno2, num3, deno3;
+            string pair1, pair2;
+            Console.WriteLine("Enter the first pair:");
+            pair1 = Console.ReadLine();
+            num1 =Convert.ToInt32( pair1.Split(' ')[0]);
+            deno1 =Convert.ToInt32( pair1.Split(' ')[1]);
+
+            Console.WriteLine("Enter the second pair:");
+            pair2 = Console.ReadLine();
+            num2 = Convert.ToInt32(pair2.Split(' ')[0]);
+            deno2 = Convert.ToInt32(pair2.Split(' ')[1]);
+
+
+            num3 = (num1 * deno2) + (num2 * deno1);
+            deno3 = deno1 * deno2;
+
+            // Console.WriteLine("{0}/{1}+{2}/{3}={4}/{5}", num1, deno1, num2, deno2, num3, deno3);
+
+            //equivalent fraction, simplify fraction
+            if (num3 > deno3)
+            {
+                for (int i = 2; i < deno3; i++)
+                {
+                    if (num3 % i == 0 && deno3 % i == 0)
+                    {
+                        num3 = num3 / i;
+                        deno3 = deno3 / i;
+                    }
+                }
+                Console.WriteLine("{0}/{1}+{2}/{3}={4}/{5}", num1, deno1, num2, deno2, num3, deno3);
+            }
+            if (num3 < deno3)
+            {
+                for (int i = 2; i < num3; i++)
+                {
+                    if (num3 % i == 0 && deno3 % i == 0)
+                    {
+                        num3 = num3 / i;
+                        deno3 = deno3 / i;
+                    }
+                }
+                Console.WriteLine("{0}/{1}+{2}/{3}={4}/{5}", num1, deno1, num2, deno2, num3, deno3);
+            }
+
+            //use mixNumber when numerator is greater than denominator
+            int mixNum;
+            if (num3 > deno3) {
+                mixNum = num3 / deno3;
+                num3 = num3-mixNum*deno3;
+                Console.WriteLine("{0}/{1}+{2}/{3}={4} {5}/{6}",
+            num1, deno1, num2, deno2, mixNum, num3, deno3);
+            }
+
+           
+
+
+
+
+
+        }
+    }
+}
