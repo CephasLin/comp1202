@@ -71,6 +71,12 @@ namespace Fraction
                 }
                 Console.WriteLine("{0}/{1}+{2}/{3}={4}/{5}", num1, deno1, num2, deno2, num3, deno3);
             }
+            int num4;
+            if(num3 % deno3 == 0) {
+                num4 = num3 / deno3;
+                Console.WriteLine("{0}/{1}+{2}/{3}={4}", num1, deno1, num2, deno2, num4);
+            }
+
 
             //use mixNumber when numerator is greater than denominator
             int mixNum;
@@ -80,7 +86,8 @@ namespace Fraction
                 Console.WriteLine("{0}/{1}+{2}/{3}={4} {5}/{6}",
             num1, deno1, num2, deno2, mixNum, num3, deno3);
             }
-
+            
+             Console.ReadKey();
            
 
 
