@@ -70,6 +70,9 @@ namespace GroupProject101198598
                         }
                         Console.WriteLine("{0}\t\t\t{1} ", sId, totalMark);
                     }
+                    streamReader.Close();
+
+
 
                     //if the first line of the file is not 0.
                     if (counter != 0)
@@ -114,6 +117,7 @@ namespace GroupProject101198598
                         Console.WriteLine("No student answers are found!");
                     }
                 }
+               
             }
             catch (FileNotFoundException e)
             {
@@ -130,6 +134,7 @@ namespace GroupProject101198598
 
 
             Console.WriteLine("");
+
             //stop watching the code, execution time function.
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
