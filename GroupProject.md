@@ -109,6 +109,7 @@ namespace GroupProject
                     }
                     else
                     {
+                        //if the first line is 0, then output answeres not found.
                         Console.WriteLine("No student answers are found!");
                     }
                 }
