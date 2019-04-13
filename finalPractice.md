@@ -56,14 +56,17 @@ namespace Final
         static int countEven(int n)
         {
             int count = 0;
+            //if the number is 0, return 1
             if (n == 0)
             {
                 count = 1;
                 Console.WriteLine(count);
                 return count;
             }
+            //if n is not 0, stop the loop if n<=0, eg： 1/10=0;
             while (n>0)
             {
+                
                 if (n % 10 % 2 == 0)
                 {
                     count++;
