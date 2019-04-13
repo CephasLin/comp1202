@@ -105,6 +105,57 @@ namespace Final
             }
             return -1;
         }
+        
+         //1  2   3   4   5   6
+        //-1 -1  -1  -1  -1  -1
+        //-1 0   -1  0   -1  0
+        //-1 0   0   0   -1  -1
+        //-1 0   0   -1   -1  -1
+        //-1 0   0   -1   0  -1
+        //-1 0   0   -1   0  0
+        static int closedLocker(int n )
+        {
+
+            bool[] locker= new bool[n];
+            //assign "false" to each locker
+            for(int q = 0; q < n; q++)
+            {
+                locker[q] = false;
+            }
+
+            //loop through locker number 2 to locker number n
+            for (int i = 1; i < n; i++)
+            {
+                //Update the value of the locker
+                //from number i, i+i,i+i+i
+                //eg: number 2,4,6  //3,6,9 //4,8,12...
+                for(int j = i; j < n; j+=i+1)
+                {
+                    if (locker[j] == false)
+                    {
+                        locker[j] = true;
+                    }
+                    else
+                    {
+                        locker[j] = false;
+                    }
+
+                }
+            }
+            //count the number of closed locker
+            int count = 0;
+            for(int p = 0; p < n; p++)
+            {
+                if (locker[p] == false)
+                {
+                    count++;
+                    //Console.Write(p+" ");
+                }
+            }
+            Console.WriteLine("");
+            return count;
+                      
+        }
 
         public static void Main(string[] args)
         {
@@ -121,7 +172,9 @@ namespace Final
             Console.WriteLine("Task5:");
             int[] arr = { 12, 22, 32, 42, 52 };
             Console.WriteLine(findNum(arr, 32));
-
+            
+            Console.WriteLine("Task6:");
+            Console.WriteLine(closedLocker(6));
         }
     }
 }
