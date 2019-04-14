@@ -5,6 +5,7 @@ namespace Final
 {
     class MainClass
     {
+    
         static int hailstone(int n)
         {
             int length = 1;
@@ -25,12 +26,11 @@ namespace Final
                     length++;
                 }
             }
-
             Console.WriteLine(hs);
             Console.WriteLine(length);
             return length;
         }
-
+************************************************************************
         static double costOfRenting(int days)
         {
             double cost = 0;
@@ -51,8 +51,7 @@ namespace Final
 
         }
 
-
-
+************************************************************************
         static int countEven(int n)
         {
             int count = 0;
@@ -82,6 +81,7 @@ namespace Final
             return count;
 
         }
+************************************************************************
         static void print1s(int n)
         {
             string s = "";
@@ -92,7 +92,7 @@ namespace Final
             }
             Console.WriteLine(s);
         }
-
+************************************************************************
         static int findNum(int[] num, int n)
         {
 
@@ -105,7 +105,7 @@ namespace Final
             }
             return -1;
         }
-        
+************************************************************************        
          //1  2   3   4   5   6
         //-1 -1  -1  -1  -1  -1
         //-1 0   -1  0   -1  0
@@ -156,7 +156,29 @@ namespace Final
             return count;
                       
         }
-
+************************************************************************
+        static double costOfOverdue(int days)
+        {
+            double cost = 0;
+            for (int i = 1; i <= days; i++)
+            {
+                cost += 0.5 * (i - 1) + 1;
+            }
+            return cost;
+        }
+************************************************************************
+        static int nthDigit(int num, int num2)
+        {
+            int found;
+            string sNum = Convert.ToString(num);
+            if (num2 <= sNum.Length)
+            {
+                found = sNum[num2-1];
+                return found;
+            }
+            return -1;
+        }
+************************************************************************
         public static void Main(string[] args)
         {
             Console.WriteLine("Task1:");
@@ -171,10 +193,13 @@ namespace Final
             print1s(123456);
             Console.WriteLine("Task5:");
             int[] arr = { 12, 22, 32, 42, 52 };
-            Console.WriteLine(findNum(arr, 32));
-            
+            Console.WriteLine(findNum(arr, 32)); 
             Console.WriteLine("Task6:");
             Console.WriteLine(closedLocker(6));
+            Console.WriteLine("Task7:");
+            Console.WriteLine(costOfOverdue(5));
+            Console.WriteLine("Task8:");
+            Console.WriteLine(nthDigit(9356,1));
         }
     }
 }
